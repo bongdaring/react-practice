@@ -1,10 +1,8 @@
 function App(){
     const App = document.createElement('div');
     App.textContent = "Hello World";
+    App.className = 'App';
     return App;
 }
 
-
-document
-    .getElementById('root')
-    .appendChild(App())
+export {App};

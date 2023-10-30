@@ -1,23 +1,7 @@
-React Practice
-1. 기본개념(Basics) **
-2. 컴포넌트(Component) ***
-3. 라우팅(Routing) **
-4. Flux: Redux*
-5. Testing(Rest)
-6. Perforamance
-7. 통합개발(Integration) **
-   FE(React) + BE(Spring Boot, API Server)
-8. [참고1] webpack-practice **
-9. [참고2] babel-practice **
+React Practice - Basics
 
-kanbanboard
-   |-- backend
-   |-- frontend
-
-emaillist
-   |-- backend
-   |-- frontend
-
-mysite07(guestbook, gallery)
-   |-- backend
-   |-- frontend
+ex00.cra: create-react-app으로 React Application 만들어 보기
+ex01: 전통적인 DOM기반 기반의 Application
+ex02: 전통적인 DOM기반 기반의 Application: 단순하게 파일 분리
+ex03: 전통적인 DOM기반 기반의 Application: JS module system
+ex04: 애플리케이션 bundling(번들링)
