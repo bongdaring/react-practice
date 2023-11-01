@@ -1,13 +1,15 @@
-ex08: JSX tutorial
-01. 특징1: HTML과의 차이점
-02. 특징2: Sigle Root
-03. 함수 컴포넌트
-04. Pure React(React API)로 컴포넌트 만들기
-05. 클래스 컴포넌트
-06. 특징3: JSX 표현식 표기법: { javascript expression }
-07. Comment
+ex01: property
+1.  컴포넌트의 데이터
+2.  부모에서 자식으로 전달된다.
+    - 컴포넌트 통신(Data Flow)
+    - Top -> Down
+3.  자식에서 변경 불가
+4.  부모가 소유한 데이터 
 
-
+src/01: 함수 컴포넌트의 property
+src/02: Data Flow
+src/03: 클래스 컴포넌트의 property
+src/04: Property Validation (prop-types 패키지)
 
 ====================================================================================
 
@@ -15,7 +17,7 @@ ex08: JSX tutorial
     1)  개발툴
         $ npm i -D webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react
     2)  라이브러리
-        $ npm i react react-dom
+        $ npm i react react-dom prop-types
 
 2.  설정
     1)  webpack.config.js
@@ -23,7 +25,7 @@ ex08: JSX tutorial
 
 3.  스트립팅
     "scripts": {
-        "start": "npx webpack serve --progress",
+        "start": "npx webpack serve --progress --env",
         "build": "npx webpack"
     }
 
