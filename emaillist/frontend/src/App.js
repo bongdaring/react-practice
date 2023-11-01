@@ -1,15 +1,18 @@
 import React from 'react';
+import './assets/scss/App.scss';
+import RegisterForm from './RegisterForm';
+import SearchBar from './SearchBar';
+import Emaillist from './Emaillist';
+import data from './assets/json/data';
 
 function App() {
-    const h1Stye = {
-        height: '100px',
-        padding: 20,
-        color: '#111',
-        backgroundColor: '#eeff99'
-    };
+
+    console.log(data);
     return (
         <div id={'App'}>
-            <h1 style={{h1Stye}}>inline styling</h1>
+            <RegisterForm />
+            <SearchBar />
+            <Emaillist emails={data} />
         </div>
     );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function App() {
     return (
         <div id={'App'}>
-            Emaillist 
+            <h1 style={{h1Stye}}>inline styling</h1>
         </div>
     );
 }
