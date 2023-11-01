@@ -4,7 +4,7 @@
   "description": "ex07: ex01.cra Recofinguration(내가 직접 석정)",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --progress",
+    "start": "npx webpack serve --progress --env",
     "build": "npx webpack"
   },
   "keywords": [],

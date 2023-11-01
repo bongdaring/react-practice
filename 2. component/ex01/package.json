@@ -1,17 +1,16 @@
 {
   "name": "ex01",
   "version": "1.0.0",
-  "description": "ex07: ex01.cra Recofinguration(내가 직접 석정)",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve --progress",
+    "debug": "npx webpack serve --progress --env",
     "build": "npx webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
