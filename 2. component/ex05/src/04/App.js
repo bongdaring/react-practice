@@ -20,9 +20,9 @@ export default function App() {
             <span>{ticks}</span>
             <Clock
                 message={`ex04: ticks ${ticks}`}
-                hours={time.getHours()}
-                minutes={time.getMinutes()}
-                seconds={time.getSeconds()}/>
+                hours={time.getHours() < 10 ? '0' + time.getHours() : time.getHours()}
+                minutes={time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()}
+                seconds={time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()}/>
         </>        
     );
 }
