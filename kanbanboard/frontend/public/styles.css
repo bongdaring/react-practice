@@ -20,4 +20,10 @@ ul      { list-style-type: none; padding: 0; margin: 0; }
 .Card__Title--is-open:before { content: '▾'; }
 
 .TaskList__Task:first-child    { margin-top: 10px; padding-top: 10px; border-top: dashed 1px #ddd; }
-.TaskList__Task--remove:after  { display: inline-block; color: #d66; content: '✖'; }
+.TaskList__Task--remove:after  { display: i
+    
+    
+    
+    
+    
+    nline-block; color: #d66; content: '✖'; }

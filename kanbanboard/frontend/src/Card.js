@@ -1,14 +1,14 @@
 import React from 'react';
 import TaskList from './TaskList';
 
-function Card(props) {
+function Card({card}) {
     return (
         <div class='Card'>
-            <div class='Card__Title'>{props.title}</div>
+            <div class='Card__Title'>{card.title}</div>
             <div class='Card__Details'>
-                {props.description}
+                {card.description}
 
-                <TaskList tasklist={props.tasks} />
+                <TaskList tasklist={card.tasks} />
 
 
             </div>

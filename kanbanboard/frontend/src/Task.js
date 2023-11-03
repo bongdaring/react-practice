@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Task(props) {
+function Task({task}) {
     return (
         <li class='TaskList__Task'>
-        <input type='checkbox' checked='true' />
-        {props.name}
-        <a href='#' class='TaskList__Task--remove'></a>
+            <input type='checkbox' checked='true' />
+                {task.name}
+            <a href='#' class='TaskList__Task--remove'></a>
         </li>
     );
 }
