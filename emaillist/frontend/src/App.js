@@ -26,6 +26,9 @@ function App() {
             },
             body: JSON.stringify(email)
         });
+
+        
+        fetchList();
     }
 
 
