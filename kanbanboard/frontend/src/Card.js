@@ -1,19 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import styles from './assets/scss/Card.scss';
 import TaskList from './TaskList';
 
-function Card({card}) {
+const Card = ({no, title, description, tasks}) => {
+    const [showDetails, setShowDetails] = useState(false);
+
     return (
-        <div class='Card'>
-            <div class='Card__Title'>{card.title}</div>
-            <div class='Card__Details'>
-                {card.description}
-
-                <TaskList tasklist={card.tasks} />
-
-
+        <div className={styles.Card}>
+            <div
+                className={
+                    showDetails ?
+                        [styles.Card__Title, styles.Card__Title__open].join(' '):
+                        styles.Card__Title
+                }
+                onClick={e => {
+                    setShowDetails(!showDetails);
+                }}>
+                {title}
             </div>
+            {showDetails ? 
+                <div className={styles.Card__Details}>
+                    {description}
+                    <TaskList tasks={tasks}/>
+                </div>:
+                null
+            }   
         </div>
     );
-}
+};
 
 export default Card;

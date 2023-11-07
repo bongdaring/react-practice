@@ -1,21 +1,25 @@
 import React from 'react';
-import data from './assets/json/data';
+import styles from './assets/css/KanbanBoard.css';
 import CardList from './CardList';
+import cards from './assets/json/data';
 
-
-function Kanbanboard(props) {
-
-    const cardsToDo = data.filter(card => card.status === 'ToDo');
-    const cardsDoing= data.filter(card => card.status === 'Doing');
-    const cardsDone = data.filter(card => card.status === 'Done');
-
+const KanbanBoard = () => {
     return (
-        <div class='KanbanBoard'>
-            <CardList cardList={cardsToDo} title={'To Do'}/>
-            <CardList cardList={cardsDoing} title={'Doing'}/>
-            <CardList cardList={cardsDone} title={'Done'}/>
+        <div className={styles.KanbanBoard}>
+            <CardList 
+                key={'To Do'}
+                title={'To Do'}
+                cards={cards.filter(card => card.status === 'ToDo')}/>
+            <CardList
+                key={'Doing'}
+                title={'Doing'}
+                cards={cards.filter(card => card.status === 'Doing')}/>
+            <CardList
+                key={'Done'}
+                title={'Done'}
+                cards={cards.filter(card => card.status === 'Done')}/>
         </div>
     );
-}
+};
 
-export default Kanbanboard;
+export default KanbanBoard;

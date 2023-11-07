@@ -1,16 +1,21 @@
 import React from 'react';
-import Header from './Header';
+import styles from './assets/css/CardList.css';
 import Card from './Card';
 
-function CardList({cardList, title}) {
-    return ( 
-        <div class='CardList'>
-            <Header name={title} />
+const CardList = ({title, cards}) => {
+    return (
+        <div className={styles.CardList}>
+            <h1>{title}</h1>
             {
-                cardList.map((card) => <Card card={card} key={card.no}/>)
+                cards.map(card => <Card
+                                    key={card.no}
+                                    no={card.no}
+                                    title={card.title}
+                                    description={card.description}
+                                    tasks={card.tasks}/>)
             }
         </div>
     );
-}
+};
 
 export default CardList;
