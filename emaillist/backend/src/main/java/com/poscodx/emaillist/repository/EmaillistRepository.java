@@ -18,10 +18,10 @@ public class EmaillistRepository {
 		return sqlSession.selectList("emaillist.findAll");
 	}
 
-	public String create(EmaillistVo vo) {
+	public boolean create(EmaillistVo vo) {
 		// TODO Auto-generated method stub
-		sqlSession.insert("emaillist.insert", vo);
-		return "tset";
+		return sqlSession.insert("emaillist.insert", vo) == 1;
+
 	}
 	
 	

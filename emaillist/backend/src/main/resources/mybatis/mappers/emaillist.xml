@@ -17,5 +17,7 @@
 		  into emaillist
 		values (null, #{firstName }, #{lastName }, #{email })
 		]]>
+		<selectKey keyProperty="no" resultType="long" order="AFTER">
+		</selectKey>
 	</insert>
 </mapper>
