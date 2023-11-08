@@ -1,13 +1,12 @@
 const path = require('path');
-const CaseSensitivcePathsPlugin = require('case-sensitive-paths-webpack-plugin')
-const { config } = require('process');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 module.exports = function(env) {
     return {
         mode: "none",
         entry: path.resolve(`src/index.js`),
         output: {
-            path: path.resolve('public'),
+            path: path.resolve('../backend/src/main/resources'),
             filename: 'assets/js/main.js',
             assetModuleFilename: 'assets/images/[hash][ext]'
         },
@@ -15,25 +14,29 @@ module.exports = function(env) {
             rules:[{
                 test: /\.js/i,
                 exclude: /node_modules/,
-                loader: 'babel-loader', 
+                loader: 'babel-loader',
                 options: {
                     configFile: path.resolve('config/babel.config.json')
                 }
             }, {
                 test: /\.(c|sa|sc)ss$/i,
-                use:['style-loader', {
+                use:[
+                    'style-loader', 
+                    {
                         loader: 'css-loader',
                         options: {
                             modules: true
                         }
-                    }, 'sass-loader']
+                    }, 
+                    'sass-loader'
+                ]
             }, {
                 test: /\.(png|gif|jp?eg|svg|ico|tif?f|bmp)/i,
                 type: 'asset/resource'
             }]
         },
         plugins: [
-            new CaseSensitivcePathsPlugin()
+            new CaseSensitivePathsPlugin()                
         ],
         devtool: "eval-source-map",
         devServer: {
@@ -44,7 +47,11 @@ module.exports = function(env) {
             hot: false,
             proxy: {
                 '/api': 'http://localhost:8080'
-            }
-        }    
+            },
+            static: {
+                directory: path.resolve('./public')
+            },
+            historyApiFallback: true
+        }   
     };
 }

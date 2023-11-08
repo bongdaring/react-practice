@@ -1,17 +1,28 @@
+# spring configuration
 spring:
    application:
       name: emaillist
-
+   
    # devtools - live reload
    devtools:
       livereload:
          enabled: true
-
+            
    #mvc
    mvc:
       static-path-pattern: /assets/**
       throw-exception-if-no-handler-found: true
+   web:
+      resources:
+         static-locations: classpath:/assets/
 
+   thymeleaf:
+      prefix : classpath:templates/
+      check-template-location: true
+      mode: HTML5
+      suffix : .html
+      cache : false
+                     
    #datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
@@ -25,7 +36,7 @@ spring:
 # mybatis
 mybatis:
    config-location: classpath:mybatis/configuration.xml
-
+   
 # server
 server:
    port: 8080
@@ -34,7 +45,7 @@ server:
       encoding:
          charset: utf-8
          enabled: true
-
+         
 # logging
 logging:
    pattern:
